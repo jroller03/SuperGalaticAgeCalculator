@@ -34,4 +34,50 @@ export class GalacticCalculator {
     let jupiterAge = this.age / 11.86;
     return jupiterAge;
   }
+
+  lifeExpectancy(myAge, mercuryAge, venusAge, marsAge, jupiterAge){
+    const averageLifeExpectancy = 80;
+    let output = "";
+    let normalExpectancy = (averageLifeExpectancy - myAge);
+
+    if (normalExpectancy > 0){
+     output += "You have "+normalExpectancy+" years left on Earth. ";
+   } else {
+     output += "You have lived on Earth "+Math.abs(normalExpectancy)+" years longer than expected. ";
+   }
+
+   let mercuryExpect = (averageLifeExpectancy - mercuryAge);
+
+   if (mercuryExpect > 0){
+     output += "You have "+mercuryExpect+" years left on Mercury. ";
+   } else {
+     output += "You have lived on Mercury "+Math.abs(mercuryExpect)+" years longer than expected. ";
+   }
+
+   let venusExpect = (averageLifeExpectancy - venusAge);
+
+   if (venusExpect > 0){
+     output += "You have "+venusExpect+" years left on Venus. ";
+   } else {
+     output += "You have lived on Venus "+Math.abs(venusExpect)+" years longer than expected. ";
+   }
+
+   let marsExpect = (averageLifeExpectancy - marsAge);
+
+   if (marsExpect > 0){
+     output += "You have "+marsExpect+" years left on Mars. ";
+   } else {
+     output += "You have lived on Mars "+Math.abs(marsExpect)+" years longer than expected. ";
+   }
+
+   let jupiterExpect = (averageLifeExpectancy - jupiterAge);
+
+   if (jupiterExpect > 0){
+     output += "You have "+jupiterExpect+" years left on Jupiter. ";
+   } else {
+     output += "You have lived on Jupiter "+Math.abs(jupiterExpect)+" years longer than expected. ";
+   }
+
+   return output;
+  }
 }

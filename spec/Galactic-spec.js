@@ -37,5 +37,14 @@ describe('GalacticCalculator', function() {
     expect("Earthling your age in Jupiter years is "+age.ageInJupiterYears()+" years.").toEqual("Earthling your age in Jupiter years is "+2.1922428330522767+" years.");
   });
 
+  it('will determine how many years a person has left to live on each planet', function(){
+    let myAge = 26;
+    let age = new GalacticCalculator(myAge);
+    let mercuryAge = age.ageInMercuryYears();
+    let venusAge = age.ageInVenusYears();
+    let marsAge = age.ageInMarsYears();
+    let jupiterAge = age.ageInJupiterYears();
 
+    expect(age.lifeExpectancy(myAge, mercuryAge, venusAge, marsAge, jupiterAge)).toEqual("You have 54 years left on Earth. You have lived on Mercury 28.333333333333343 years longer than expected. You have 38.064516129032256 years left on Venus. You have 66.17021276595744 years left on Mars. You have 77.80775716694772 years left on Jupiter. ");
+  });
 });
